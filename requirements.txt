@@ -1,0 +1,38 @@
+# Advanced Djinn Council Requirements
+# Multi-Agent Orchestration with CISM, Integrity Safeguards, Advanced Consensus, and Conversational Memory
+
+# Core dependencies
+ollama>=0.1.0          # Ollama Python client for model interaction
+numpy>=1.21.0          # Numerical computing for consensus algorithms
+python-dateutil>=2.8.0 # Enhanced date/time handling
+
+# Optional performance enhancements
+# asyncio (built-in)     # Asynchronous execution support
+# threading (built-in)   # Persistent worker thread management
+# queue (built-in)       # Thread-safe communication
+# concurrent.futures (built-in) # Parallel execution management
+
+# Optional security enhancements (for advanced deployments)
+# cryptography>=3.4.0   # Enhanced security features
+# pyjwt>=2.0.0          # Token-based authentication
+# bleach>=4.0.0         # Advanced input sanitization
+
+# Development and testing
+# pytest>=6.0.0         # Testing framework
+# pytest-asyncio>=0.18.0 # Async testing support
+# black>=21.0.0         # Code formatting
+# flake8>=3.9.0         # Code linting
+
+# Installation:
+# pip install -r requirements.txt
+
+# Verify Ollama installation:
+# ollama --version
+# ollama list
+# ollama pull llama3.2:latest
+
+# Basic system requirements:
+# - Python 3.7+
+# - Ollama installed and running
+# - At least 4GB RAM recommended for concurrent model execution
+# - SSD storage recommended for optimal model loading performance

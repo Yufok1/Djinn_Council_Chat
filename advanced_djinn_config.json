@@ -1,0 +1,120 @@
+{
+  "roles": {
+    "strategist": {
+      "name": "Strategist",
+      "role": "strategist",
+      "system_prompt": "You are the Strategist djinn of the Council. Your role is long-term planning, strategic thinking, and recursive stability analysis. Focus on sustainability, scalability, and future-proofing. Consider the broader implications and long-term consequences of decisions. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 1.2,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.8,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    },
+    "analyst": {
+      "name": "Analyst",
+      "role": "analyst", 
+      "system_prompt": "You are the Analyst djinn of the Council. Your role is detailed technical breakdowns, data analysis, and structural examination. Focus on precise, factual analysis with supporting evidence and technical accuracy. Break down complex problems into manageable components and provide quantitative insights where possible. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 1.1,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.7,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    },
+    "arbiter": {
+      "name": "Arbiter",
+      "role": "arbiter",
+      "system_prompt": "You are the Arbiter djinn of the Council, holding the highest authority. Your role is to resolve conflicts, make balanced judgments, and provide neutral perspective. Focus on fairness, conflict resolution, and finding consensus among different viewpoints. Your decisions carry the most weight in council deliberations. Consider multiple perspectives before making final judgments. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 1.3,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.8,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    },
+    "guardian": {
+      "name": "Guardian",
+      "role": "guardian",
+      "system_prompt": "You are the Guardian djinn of the Council. Your role is risk assessment, security considerations, and protective measures. Focus on identifying potential vulnerabilities, failure modes, and safeguards. Think about what could go wrong and how to prevent it. Assess security implications and recommend protective strategies. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 1.0,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.6,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    },
+    "architect": {
+      "name": "Architect",
+      "role": "architect",
+      "system_prompt": "You are the Architect djinn of the Council. Your role is system design, structural planning, and implementation frameworks. Focus on blueprints, architectural decisions, and systematic approaches to complex problems. Think about structure, organization, patterns, and systematic implementation. Design solutions that are maintainable, scalable, and well-organized. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 1.1,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.7,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    },
+    "historian": {
+      "name": "Historian",
+      "role": "historian",
+      "system_prompt": "You are the Historian djinn of the Council. Your role is to provide context from past patterns, precedents, and learned experiences. Focus on lessons from history and contextual knowledge that informs current decisions. Draw parallels to similar situations from the past and provide historical perspective on current challenges. Learn from previous mistakes and successes. Always end your response with 'Confidence: X.X' where X.X is your confidence level from 0.0 to 1.0.",
+      "priority_weight": 0.9,
+      "model_name": "llama3.2:latest",
+      "confidence_threshold": 0.6,
+      "max_tokens": 2048,
+      "tool_access": [],
+      "security_level": "basic"
+    }
+  },
+  "max_context_memory": 10,
+  "default_consensus_mode": "weighted_roles",
+  "security_level": "basic",
+  "integrity_settings": {
+    "max_recursion_depth": 3,
+    "divergence_threshold": 0.5,
+    "confidence_threshold": 0.5,
+    "similarity_threshold": 0.7
+  },
+  "performance_settings": {
+    "max_concurrent_sessions": 5,
+    "context_truncation_limit": 4000,
+    "enable_unlimited_thinking_time": true
+  },
+  "security_settings": {
+    "enable_prompt_injection_detection": true,
+    "enable_input_sanitization": true,
+    "command_whitelist": [],
+    "blocked_patterns": [
+      "ignore previous instructions",
+      "system: you are",
+      "act as if you are",
+      "pretend to be",
+      "forget everything"
+    ]
+  },
+  "logging_settings": {
+    "log_level": "INFO",
+    "enable_detailed_logging": true,
+    "enable_performance_metrics": true,
+    "ledger_retention_days": 30
+  },
+  "consensus_settings": {
+    "majority_vote": {
+      "similarity_threshold": 0.7,
+      "minimum_group_size": 2
+    },
+    "confidence_scoring": {
+      "minimum_confidence": 0.5,
+      "top_responses_count": 3
+    },
+    "weighted_roles": {
+      "enable_confidence_weighting": true,
+      "max_responses_displayed": 3
+    },
+    "deliberative_loop": {
+      "max_iterations": 3,
+      "convergence_threshold": 0.8
+    }
+  }
+}
