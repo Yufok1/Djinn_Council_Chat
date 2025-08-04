@@ -740,13 +740,29 @@ class AdvancedDjinnCouncil:
     def _log_session(self, session: CouncilSession):
         """Log complete session to recursive ledger"""
         try:
+            # Convert djinn responses to dict with datetime serialization
+            djinn_responses_serializable = []
+            for response in session.djinn_responses:
+                response_dict = asdict(response)
+                # Convert datetime timestamp to ISO format string
+                if 'timestamp' in response_dict and hasattr(response_dict['timestamp'], 'isoformat'):
+                    response_dict['timestamp'] = response_dict['timestamp'].isoformat()
+                djinn_responses_serializable.append(response_dict)
+            
+            # Convert consensus result with datetime serialization
+            consensus_result_serializable = None
+            if session.consensus_result:
+                consensus_result_serializable = asdict(session.consensus_result)
+                if 'timestamp' in consensus_result_serializable and hasattr(consensus_result_serializable['timestamp'], 'isoformat'):
+                    consensus_result_serializable['timestamp'] = consensus_result_serializable['timestamp'].isoformat()
+            
             log_entry = {
                 "timestamp": session.timestamp.isoformat(),
                 "session_id": session.session_id,
                 "user_input": session.user_input,
                 "state_history": [(state.value, ts.isoformat()) for state, ts in session.state_history],
-                "djinn_responses": [asdict(response) for response in session.djinn_responses],
-                "consensus_result": asdict(session.consensus_result) if session.consensus_result else None,
+                "djinn_responses": djinn_responses_serializable,
+                "consensus_result": consensus_result_serializable,
                 "total_execution_time": session.total_execution_time,
                 "recursion_depth": session.recursion_depth,
                 "security_events": session.security_events
